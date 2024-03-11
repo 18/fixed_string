@@ -8,7 +8,7 @@
 #
 
 import testing ;
-import ../../config/checks/config : requires ;
+import config : requires ;
 
 local defines =
     [ requires

@@ -219,7 +219,7 @@ jobs:
               then
                   apt-get -o Acquire::Retries=$NET_RETRY_COUNT update
                   apt-get -o Acquire::Retries=$NET_RETRY_COUNT install -y sudo software-properties-common tzdata wget curl apt-transport-https make apt-file unzip libssl-dev build-essential autotools-dev autoconf automake g++ libc++-helpers python ruby cpio gcc-multilib g++-multilib pkgconf python3 ccache libpython-dev
-
+          
                   # install pip:
                   python_version=$(python3 -c 'import sys; print("{0.major}.{0.minor}".format(sys.version_info))')
                   if [[ ${python_version} =~ ^3\.[0-5]$ ]]; then
@@ -229,12 +229,12 @@ jobs:
                   fi
                   wget https://bootstrap.pypa.io/pip/$python_version/get-pip.py
                   python3 get-pip.py
-
+          
                   # install git:
                   # apt-get install -y git
                   apt-add-repository ppa:git-core/ppa
                   apt-get -o Acquire::Retries=$NET_RETRY_COUNT update && apt-get -o Acquire::Retries=$NET_RETRY_COUNT install -y git
-
+          
                   # install cmake:
                   # apt-get -o Acquire::Retries=$NET_RETRY_COUNT install -y cmake
                   sudo pip3 install cmake
